@@ -1,0 +1,24 @@
+// this is a comment
+
+// sectoin:
+:main-area
+  // define the start and end of the sectoin
+  // : with no start is the whole excel file
+  start# :A2
+  end#   :N8
+
+// the top left cell of :main-area
+$variable = main-area:A1
+
+
+// define the value of a cell
+$variable (=) "this is in a cell
+
+// the entire A column of main area
+$column = main-area:A
+
+// [] will go through all of the items in a column
+// i will atuomaticialy be assigned
+$column as $item for ($column.len - 3) [
+  $item (=) i
+]

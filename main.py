@@ -9,7 +9,7 @@ class main:
     self.ws = wb.active
     
     self.ws.delete_rows(1, self.ws.max_row+1)
-    self.fill((3,3),(10,10))
+    self.fill((1,1),(10,10))
 
   # util functions 
   def makeCell(self, x, y, value):
@@ -18,8 +18,8 @@ class main:
 
   # fill sheet from 2 cords with a their cordiante
   def fill(self, start, end):
-    for _column in range(end[0]):
-      for _row in range(end[1]):
+    for _column in range(end[0]-start[0] +1):
+      for _row in range(end[1] -start[1] +1):
         
         # get the correct row that it is editing
         column = _column + start[0]
